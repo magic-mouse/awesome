@@ -32,4 +32,12 @@ public class MainController {
         return ResponseEntity.status(403).body("Nope no access");
     }
 
+    @GetMapping("checkuser")
+    @ApiOperation(value = "Login endpoint")
+    public ResponseEntity checkUser(@RequestParam String username ){
+
+
+            return ResponseEntity.ok("{\"username\":\"" + username + "\"}");
+
+    }
 }
