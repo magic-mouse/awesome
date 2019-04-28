@@ -1,8 +1,9 @@
 package se.regent.docker.awesome.controllers;
 
-import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,12 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
+@Api(value = "Controller")
 public class MainController {
 
     private static final String key = "dksladksuiods98dsa0+90q343n32m32";
 
-    @RequestMapping("login")
-    @GetMapping()
+    @GetMapping("login")
+    @ApiOperation(value = "Login endpoint")
     public ResponseEntity login(@RequestParam String username, @RequestParam String password ){
 
 
