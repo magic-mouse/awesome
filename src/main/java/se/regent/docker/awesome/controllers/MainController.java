@@ -35,9 +35,6 @@ public class MainController {
     @GetMapping("checkuser")
     @ApiOperation(value = "Login endpoint")
     public ResponseEntity checkUser(@RequestParam String username ){
-
-
             return ResponseEntity.ok("{\"username\":\"" + username + "\"}");
-
     }
 }
